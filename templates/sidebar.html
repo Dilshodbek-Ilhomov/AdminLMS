@@ -1,0 +1,38 @@
+
+{% load static %}
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="#">
+            <img src="{% static 'images/icon/logo.png' %}" alt="Cool Admin" />
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="{% if request.resolver_match.url_name == 'home_page' %}active{% endif %}">
+                    <a href="{% url 'home_page' %}"><i class="fa fa-home"></i>Dashboard</a>
+                </li>
+                <li class="{% if 'faculty' in request.resolver_match.url_name %}active{% endif %}">
+                    <a href="{% url 'faculty_list' %}"><i class="fas fa-university"></i>Faculty</a>
+                </li>
+                <li class="{% if 'kafedra' in request.resolver_match.url_name %}active{% endif %}">
+                    <a href="{% url 'kafedra_list' %}"><i class="fas fa-align-justify"></i>Kafedra</a>
+                </li>
+                <li class="{% if 'subject' in request.resolver_match.url_name %}active{% endif %}">
+                    <a href="{% url 'subject_list' %}"><i class="fas fa-book"></i>Subject</a>
+                </li>
+                <li class="{% if 'teacher' in request.resolver_match.url_name %}active{% endif %}">
+                    <a href="{% url 'teacher_list' %}"><i class="fa fa-id-card"></i>Teachers</a>
+                </li>
+                <li class="{% if 'groups' in request.resolver_match.url_name %}active{% endif %}">
+                    <a href="{% url 'group_list' %}"><i class="fa fa-group"></i>Groups</a>
+                </li>
+                <li class="{% if 'student' in request.resolver_match.url_name %}active{% endif %}">
+                    <a href="{% url 'student_list' %}"><i class="fa fa-user"></i>Students</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<!-- END MENU SIDEBAR-->
