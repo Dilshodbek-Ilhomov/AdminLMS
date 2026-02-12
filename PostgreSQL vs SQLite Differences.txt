@@ -1,0 +1,52 @@
+                                   |
+PostgreSQL vs SQLite differences   |
+                                   |_________________________________________________________________________
+                                                                                                             |
+_____________________________________________________________________________________________________________|
+                                                                                                             |
+Table ochish / Create Table                                                                                  |
+_____________________________________________________________________________________________________________|
+SQLite code                                                                                                  |
+                                                                                                             |
+                                                                                                             |
+CREATE TABLE IF NOT EXIST students (                                                                         |
+    id INTEGER PRIMARY KEY AUTOINCREMENT,                                                                    |
+    name TEXT NOT NULL,                                                                                      |
+    surname TEXT NOT NULL,                                                                                   |
+    age INTEGER NOT NULL,                                                                                    |
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP --vaqtni avtomatik kiritadi                                |
+);                                                                                                           |
+                                                                                                             |
+                                                                                                             |
+_____________________________________________________________________________________________________________|
+                                                                                                             |
+PostgreSQL code                                                                                              |
+                                                                                                             |
+                                                                                                             |
+CREATE TABLE IF NOT EXIST students (                                                                         |
+    id SERIAL PRIMARY KEY,  --SERIAL = avtomatik son                                                         |
+    name VARCHAR(100) NOT NULL,                                                                              |
+    surname VARCHAR(100) NOT NULL,                                                                           |
+    age INTEGER NOT NULL,                                                                                    |
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP                                                           |
+);                                                                                                           |
+                                                                                                             |
+_____________________________________________________________________________________________________________|
+_____________________________________________________________________________________________________________|
+                                                                                                             |
+Tablelarni ko'rish / Show Table                                                                              |
+_____________________________________________________________________________________________________________|
+SQLite code                                                                                                  |
+                                                                                                             |
+SELECT * FROM students;                                                                                      |
+_____________________________________________________________________________________________________________|
+                                                                                                             |
+PostgreSQL code                                                                                              |
+                                                                                                             |
+SELECT * FROM students;                                                                                      |
+_____________________________________________________________________________________________________________|
+
+
+
+
+
